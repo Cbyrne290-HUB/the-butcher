@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% block title %}Menu – The Butcher{% endblock %}
+
+{% block content %}
+<!-- Page header -->
+<section class="page-header bg-dark text-white py-5" aria-label="Menu page header">
+  <div class="container text-center">
+    <span class="text-warning fw-semibold text-uppercase small tracking-wide">Our Offering</span>
+    <h1 class="display-5 fw-bold mt-2 mb-2">The Menu</h1>
+    <p class="text-muted">All steaks are dry-aged a minimum of 28 days · Served with choice of sauce &amp; two sides</p>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- Starters -->
+  <section class="mb-6" aria-labelledby="starters-heading">
+    <div class="d-flex align-items-center gap-3 mb-4">
+      <div class="section-line flex-grow-1"></div>
+      <h2 class="fs-4 fw-bold text-uppercase text-warning mb-0" id="starters-heading">Starters</h2>
+      <div class="section-line flex-grow-1"></div>
+    </div>
+    <div class="row g-3">
+      {% for dish in starters %}
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div>
+            <h5 class="fw-bold mb-1">{{ dish.name }}</h5>
+            <p class="text-muted small mb-0">{{ dish.desc }}</p>
+          </div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€{{ dish.price }}</span>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Beef Tartare</h5>
+          <p class="text-muted small mb-0">Finely chopped Hereford fillet, capers, shallot, egg yolk, toasted sourdough</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€16</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Bone Marrow</h5>
+          <p class="text-muted small mb-0">Roasted Irish marrow bone, chimichurri, pickled shallots, grilled bread</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€14</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Burrata &amp; Heritage Tomatoes</h5>
+          <p class="text-muted small mb-0">Wicklow burrata, Co. Louth heritage tomatoes, basil oil, aged balsamic</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€13</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Dublin Bay Prawns</h5>
+          <p class="text-muted small mb-0">Pan-fried in garlic butter, smoked paprika aioli, micro herbs</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€18</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Steaks -->
+  <section class="mb-6" aria-labelledby="steaks-heading">
+    <div class="d-flex align-items-center gap-3 mb-4">
+      <div class="section-line flex-grow-1"></div>
+      <h2 class="fs-4 fw-bold text-uppercase text-warning mb-0" id="steaks-heading">The Cuts</h2>
+      <div class="section-line flex-grow-1"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Fillet <span class="badge bg-warning text-dark ms-1 small">Signature</span></h5>
+          <p class="text-muted small mb-0">200g Irish Hereford fillet, 35-day dry-aged, the most tender cut we offer</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€48</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Ribeye</h5>
+          <p class="text-muted small mb-0">350g well-marbled ribeye, 28-day aged, rich and deeply flavoured</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€44</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Sirloin</h5>
+          <p class="text-muted small mb-0">300g grass-fed sirloin, firm texture, clean beefy flavour</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€38</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Côte de Bœuf (for 2)</h5>
+          <p class="text-muted small mb-0">800g bone-in rib, 42-day dry-aged, carved tableside · must be ordered in advance</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€110</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Flat Iron</h5>
+          <p class="text-muted small mb-0">250g feather blade, buttery texture, exceptional value</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€28</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Wagyu Picanha</h5>
+          <p class="text-muted small mb-0">200g Irish Wagyu rump cap, extraordinary marbling, served medium-rare only</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€65</span>
+        </div>
+      </div>
+    </div>
+    <p class="text-muted small mt-3">
+      <i class="bi bi-info-circle me-1"></i>
+      All steaks served with a choice of sauce and two sides. Cooking preferences: Rare / Medium-Rare / Medium / Well-Done.
+    </p>
+  </section>
+
+  <!-- Sauces & Sides -->
+  <div class="row g-5 mb-6">
+    <div class="col-md-6">
+      <section aria-labelledby="sauces-heading">
+        <h3 class="fw-bold mb-3 text-warning" id="sauces-heading">Sauces</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item border-bottom px-0">Peppercorn</li>
+          <li class="list-group-item border-bottom px-0">Béarnaise</li>
+          <li class="list-group-item border-bottom px-0">Red Wine Jus</li>
+          <li class="list-group-item border-bottom px-0">Chimichurri</li>
+          <li class="list-group-item border-bottom px-0">Garlic Butter</li>
+        </ul>
+      </section>
+    </div>
+    <div class="col-md-6">
+      <section aria-labelledby="sides-heading">
+        <h3 class="fw-bold mb-3 text-warning" id="sides-heading">Sides <small class="text-muted fs-6 fw-normal">€6 each</small></h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item border-bottom px-0">Butcher's Triple-Cooked Chips</li>
+          <li class="list-group-item border-bottom px-0">Creamed Potato &amp; Truffle</li>
+          <li class="list-group-item border-bottom px-0">Roasted Vine Tomatoes</li>
+          <li class="list-group-item border-bottom px-0">Wilted Spinach &amp; Garlic</li>
+          <li class="list-group-item border-bottom px-0">Grilled Asparagus &amp; Parmesan</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <!-- Desserts -->
+  <section class="mb-5" aria-labelledby="desserts-heading">
+    <div class="d-flex align-items-center gap-3 mb-4">
+      <div class="section-line flex-grow-1"></div>
+      <h2 class="fs-4 fw-bold text-uppercase text-warning mb-0" id="desserts-heading">Desserts</h2>
+      <div class="section-line flex-grow-1"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Dark Chocolate Fondant</h5>
+          <p class="text-muted small mb-0">70% Valrhona chocolate, salted caramel core, vanilla ice cream</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€11</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Irish Cream Cheesecake</h5>
+          <p class="text-muted small mb-0">Baileys-infused baked cheesecake, biscuit base, raspberry coulis</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€10</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Artisan Irish Cheese</h5>
+          <p class="text-muted small mb-0">Selection of three Irish cheeses, oatcakes, chutney, grapes</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€14</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item d-flex justify-content-between align-items-start p-3 border-bottom">
+          <div><h5 class="fw-bold mb-1">Affogato</h5>
+          <p class="text-muted small mb-0">Vanilla ice cream, Bewley's espresso, optional shot of Frangelico</p></div>
+          <span class="fw-bold text-dark ms-3 text-nowrap">€8</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="text-center py-4">
+    <a href="{% url 'booking_create' %}" class="btn btn-warning btn-lg px-5 fw-bold">
+      <i class="bi bi-calendar-plus me-2"></i>Reserve Your Table
+    </a>
+  </div>
+
+</div>
+{% endblock %}
