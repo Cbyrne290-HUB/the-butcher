@@ -1,0 +1,205 @@
+/* =====================================================
+   The Butcher – Custom Stylesheet
+   Fonts: Playfair Display (headings), Inter (body)
+   Palette: Dark (#111), Gold (#f6b826), Off-white (#f9f7f4)
+   ===================================================== */
+
+/* --- Root variables --------------------------------- */
+:root {
+  --butcher-dark: #111111;
+  --butcher-gold: #f6b826;
+  --butcher-offwhite: #f9f7f4;
+  --butcher-charcoal: #2c2c2c;
+  --butcher-muted: #6c757d;
+  --border-radius-xl: 1.25rem;
+}
+
+/* --- Base ------------------------------------------- */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--butcher-offwhite);
+  color: var(--butcher-dark);
+}
+
+h1, h2, h3, h4, h5,
+.brand-name {
+  font-family: 'Playfair Display', serif;
+}
+
+/* --- Utility ---------------------------------------- */
+.tracking-wide { letter-spacing: 0.08em; }
+.py-6 { padding-top: 5rem; padding-bottom: 5rem; }
+.not-italic { font-style: normal; }
+
+/* --- Navbar ----------------------------------------- */
+.navbar-brand .brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.navbar .nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--butcher-gold) !important;
+}
+
+/* --- Auth bar --------------------------------------- */
+.auth-bar {
+  font-size: 0.8rem;
+}
+
+/* --- Hero section ----------------------------------- */
+.hero-section {
+  min-height: 88vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.5) 100%),
+    url('https://images.unsplash.com/photo-1559847844-5315695dadae?w=1600&q=80') center/cover no-repeat;
+}
+
+.hero-section .text-white-75 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Page headers ----------------------------------- */
+.page-header {
+  background: linear-gradient(135deg, #111 60%, #1e1e1e 100%);
+  border-bottom: 3px solid var(--butcher-gold);
+}
+
+/* --- Cards ------------------------------------------ */
+.card {
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* --- Step icons ------------------------------------- */
+.step-icon {
+  width: 72px;
+  height: 72px;
+  border: 3px solid var(--butcher-gold);
+}
+
+/* --- About image wrapper ---------------------------- */
+.about-image-wrapper {
+  aspect-ratio: 4 / 3;
+  background: #eee;
+}
+
+.about-image-wrapper img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Menu section dividers -------------------------- */
+.section-line {
+  height: 1px;
+  background: #dee2e6;
+}
+
+.menu-item {
+  transition: background-color 0.15s ease;
+}
+
+.menu-item:hover {
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+}
+
+/* --- Staff table ------------------------------------ */
+.table thead th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+/* --- Badges ----------------------------------------- */
+.badge {
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+/* --- Forms ------------------------------------------ */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--butcher-gold);
+  box-shadow: 0 0 0 0.2rem rgba(246, 184, 38, 0.25);
+}
+
+/* --- Buttons ---------------------------------------- */
+.btn-warning {
+  background-color: var(--butcher-gold);
+  border-color: var(--butcher-gold);
+  color: var(--butcher-dark);
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: #e0a820;
+  border-color: #e0a820;
+  color: var(--butcher-dark);
+}
+
+/* --- Footer ----------------------------------------- */
+.footer {
+  border-top: 3px solid var(--butcher-gold);
+}
+
+.footer address {
+  line-height: 2;
+}
+
+/* --- Alerts ----------------------------------------- */
+.alert {
+  border-radius: var(--border-radius-xl);
+  border-left-width: 4px;
+}
+
+/* --- Responsive tweaks ------------------------------ */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 70vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2.25rem;
+  }
+
+  .display-6 {
+    font-size: 1.75rem;
+  }
+}
+
+/* --- Accessibility: focus ring ---------------------- */
+:focus-visible {
+  outline: 3px solid var(--butcher-gold);
+  outline-offset: 3px;
+}
+
+/* --- Skip link -------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--butcher-gold);
+  color: var(--butcher-dark);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
