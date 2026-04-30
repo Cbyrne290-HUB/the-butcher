@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}404 Not Found – The Butcher{% endblock %}
+{% block content %}
+<div class="container py-5 text-center">
+  <i class="bi bi-map display-1 text-warning mb-4"></i>
+  <h1 class="fw-bold">404 – Table Not Found</h1>
+  <p class="text-muted mb-4">
+    The page you're looking for doesn't exist. It may have been moved or the link is incorrect.
+  </p>
+  <a href="{% url 'home' %}" class="btn btn-dark px-4">
+    <i class="bi bi-house me-1"></i>Back to Home
+  </a>
+</div>
+{% endblock %}
