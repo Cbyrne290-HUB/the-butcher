@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} – The Butcher{% endblock %}
+
+{% block content %}
+<section class="page-header bg-dark text-white py-5" aria-label="Booking form header">
+  <div class="container text-center">
+    <span class="text-warning fw-semibold text-uppercase small tracking-wide">Reserve Your Spot</span>
+    <h1 class="display-6 fw-bold mt-2 mb-0">{{ title }}</h1>
+  </div>
+</section>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7 col-md-9">
+
+      <!-- Info card -->
+      <div class="alert alert-secondary d-flex gap-2 mb-4" role="note">
+        <i class="bi bi-info-circle-fill flex-shrink-0 mt-1"></i>
+        <div>
+          We are open <strong>Wednesday to Monday, 12pm–10pm</strong>.
+          For groups larger than 12, please call us on
+          <a href="tel:+35316785432" class="alert-link">+353 1 678 5432</a>.
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-header bg-dark text-white py-3 px-4">
+          <h2 class="fs-5 fw-bold mb-0">
+            <i class="bi bi-calendar-event me-2 text-warning"></i>Booking Details
+          </h2>
+        </div>
+        <div class="card-body p-4">
+          <form method="post" novalidate aria-label="Table booking form">
+            {% csrf_token %}
+
+            <!-- Date -->
+            <div class="mb-4">
+              <label for="{{ form.date.id_for_label }}" class="form-label fw-semibold">
+                Date <span class="text-danger" aria-hidden="true">*</span>
+              </label>
+              {{ form.date }}
+              {% if form.date.help_text %}
+                <div class="form-text text-muted">{{ form.date.help_text }}</div>
+              {% endif %}
+              {% for error in form.date.errors %}
+                <div class="invalid-feedback d-block">
+                  <i class="bi bi-exclamation-circle me-1"></i>{{ error }}
+                </div>
+              {% endfor %}
+            </div>
+
+            <!-- Time Slot -->
+            <div class="mb-4">
+              <label for="{{ form.time_slot.id_for_label }}" class="form-label fw-semibold">
+                Time <span class="text-danger" aria-hidden="true">*</span>
+              </label>
+              {{ form.time_slot }}
+              {% for error in form.time_slot.errors %}
+                <div class="invalid-feedback d-block">
+                  <i class="bi bi-exclamation-circle me-1"></i>{{ error }}
+                </div>
+              {% endfor %}
+            </div>
+
+            <!-- Party Size -->
+            <div class="mb-4">
+              <label for="{{ form.party_size.id_for_label }}" class="form-label fw-semibold">
+                Number of Guests <span class="text-danger" aria-hidden="true">*</span>
+              </label>
+              {{ form.party_size }}
+              {% if form.party_size.help_text %}
+                <div class="form-text text-muted">{{ form.party_size.help_text }}</div>
+              {% endif %}
+              {% for error in form.party_size.errors %}
+                <div class="invalid-feedback d-block">
+                  <i class="bi bi-exclamation-circle me-1"></i>{{ error }}
+                </div>
+              {% endfor %}
+            </div>
+
+            <!-- Special Requests -->
+            <div class="mb-4">
+              <label for="{{ form.special_requests.id_for_label }}" class="form-label fw-semibold">
+                Special Requests
+              </label>
+              {{ form.special_requests }}
+              {% for error in form.special_requests.errors %}
+                <div class="invalid-feedback d-block">
+                  <i class="bi bi-exclamation-circle me-1"></i>{{ error }}
+                </div>
+              {% endfor %}
+            </div>
+
+            <!-- Non-field errors -->
+            {% if form.non_field_errors %}
+              <div class="alert alert-danger" role="alert">
+                {% for error in form.non_field_errors %}
+                  <p class="mb-0"><i class="bi bi-exclamation-triangle me-1"></i>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <div class="d-flex gap-2 pt-2">
+              <button type="submit" class="btn btn-warning fw-bold px-4">
+                <i class="bi bi-check-circle me-1"></i>{{ submit_label }}
+              </button>
+              <a href="{% url 'my_bookings' %}" class="btn btn-outline-secondary px-4">
+                Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {% if booking %}
+      <div class="card border-0 bg-light rounded-4 mt-3 p-3">
+        <p class="mb-0 small text-muted">
+          <i class="bi bi-clock-history me-1"></i>
+          This booking was created on {{ booking.created_at|date:"d M Y" }}.
+          Current status: <strong>{{ booking.get_status_display }}</strong>
+        </p>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

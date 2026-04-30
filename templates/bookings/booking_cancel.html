@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Cancel Booking – The Butcher{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-header bg-danger text-white py-3 px-4">
+          <h1 class="fs-5 fw-bold mb-0">
+            <i class="bi bi-exclamation-triangle me-2"></i>Cancel Booking
+          </h1>
+        </div>
+        <div class="card-body p-4">
+          <p class="text-muted mb-4">
+            Are you sure you want to cancel the following booking? This action cannot be undone.
+          </p>
+
+          <div class="bg-light rounded-3 p-3 mb-4">
+            <p class="fw-bold mb-1">
+              <i class="bi bi-calendar-event me-2 text-danger"></i>
+              {{ booking.date|date:"l, d F Y" }} at {{ booking.get_time_display_label }}
+            </p>
+            <p class="text-muted small mb-0">
+              <i class="bi bi-people me-2"></i>
+              {{ booking.party_size }} guest{{ booking.party_size|pluralize }}
+            </p>
+            {% if booking.special_requests %}
+            <p class="text-muted small mb-0 mt-1">
+              <i class="bi bi-chat-left-text me-2"></i>
+              {{ booking.special_requests }}
+            </p>
+            {% endif %}
+          </div>
+
+          <div class="d-flex gap-2">
+            <form method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger fw-bold px-4">
+                <i class="bi bi-x-circle me-1"></i>Yes, Cancel Booking
+              </button>
+            </form>
+            <a href="{% url 'my_bookings' %}" class="btn btn-outline-secondary px-4">
+              Keep Booking
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

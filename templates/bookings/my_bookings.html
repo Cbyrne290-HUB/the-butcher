@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %}My Bookings – The Butcher{% endblock %}
+
+{% block content %}
+<section class="page-header bg-dark text-white py-5" aria-label="My bookings header">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <span class="text-warning fw-semibold text-uppercase small tracking-wide">Your Account</span>
+        <h1 class="display-6 fw-bold mt-1 mb-0">My Bookings</h1>
+      </div>
+      <a href="{% url 'booking_create' %}" class="btn btn-warning fw-bold px-4">
+        <i class="bi bi-plus-circle me-1"></i>New Booking
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- Upcoming bookings -->
+  <section aria-labelledby="upcoming-heading">
+    <h2 class="fs-5 fw-bold text-uppercase text-muted mb-3" id="upcoming-heading">
+      <i class="bi bi-calendar-check me-2 text-success"></i>Upcoming
+    </h2>
+
+    {% if upcoming %}
+      <div class="row g-3 mb-5">
+        {% for booking in upcoming %}
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <h3 class="fs-5 fw-bold mb-1">{{ booking.date|date:"l, d F Y" }}</h3>
+                  <p class="text-muted mb-0">
+                    <i class="bi bi-clock me-1"></i>{{ booking.get_time_display_label }}
+                    &nbsp;·&nbsp;
+                    <i class="bi bi-people me-1"></i>{{ booking.party_size }} guest{{ booking.party_size|pluralize }}
+                  </p>
+                </div>
+                <span class="badge rounded-pill
+                  {% if booking.status == 'confirmed' %}bg-success
+                  {% elif booking.status == 'pending' %}bg-warning text-dark
+                  {% else %}bg-secondary{% endif %}">
+                  {{ booking.get_status_display }}
+                </span>
+              </div>
+
+              {% if booking.special_requests %}
+              <p class="text-muted small mb-3">
+                <i class="bi bi-chat-left-text me-1"></i>
+                <em>{{ booking.special_requests|truncatewords:15 }}</em>
+              </p>
+              {% endif %}
+
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="{% url 'booking_edit' booking.id %}" class="btn btn-sm btn-outline-dark">
+                  <i class="bi bi-pencil me-1"></i>Edit
+                </a>
+                <a href="{% url 'booking_cancel' booking.id %}" class="btn btn-sm btn-outline-danger">
+                  <i class="bi bi-x-circle me-1"></i>Cancel
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="card border-0 bg-light rounded-4 p-5 text-center mb-5">
+        <i class="bi bi-calendar-x display-4 text-muted mb-3"></i>
+        <p class="text-muted mb-3">No upcoming bookings yet.</p>
+        <a href="{% url 'booking_create' %}" class="btn btn-warning fw-bold px-4 mx-auto" style="width: fit-content;">
+          <i class="bi bi-calendar-plus me-1"></i>Book a Table
+        </a>
+      </div>
+    {% endif %}
+  </section>
+
+  <!-- Past / Cancelled bookings -->
+  {% if past %}
+  <section aria-labelledby="past-heading">
+    <h2 class="fs-5 fw-bold text-uppercase text-muted mb-3" id="past-heading">
+      <i class="bi bi-clock-history me-2 text-muted"></i>Past &amp; Cancelled
+    </h2>
+    <div class="row g-3">
+      {% for booking in past %}
+      <div class="col-md-6">
+        <div class="card border-0 bg-light rounded-4 h-100 opacity-75">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h3 class="fs-6 fw-bold mb-1 text-muted">{{ booking.date|date:"l, d F Y" }}</h3>
+                <p class="text-muted small mb-0">
+                  <i class="bi bi-clock me-1"></i>{{ booking.get_time_display_label }}
+                  &nbsp;·&nbsp;
+                  <i class="bi bi-people me-1"></i>{{ booking.party_size }} guest{{ booking.party_size|pluralize }}
+                </p>
+              </div>
+              <span class="badge rounded-pill
+                {% if booking.status == 'cancelled' %}bg-danger
+                {% else %}bg-secondary{% endif %}">
+                {{ booking.get_status_display }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</div>
+{% endblock %}
