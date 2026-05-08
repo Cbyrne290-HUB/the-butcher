@@ -11,7 +11,7 @@
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <!-- Custom CSS -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
@@ -21,10 +21,10 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{% url 'home' %}">
-        <i class="bi bi-scissors text-warning"></i>
+        <i class="bi bi-scissors" style="color: var(--butcher-gold);"></i>
         <span class="brand-name">The Butcher</span>
       </a>
 
@@ -56,34 +56,35 @@
             </li>
             {% if user.is_staff %}
               <li class="nav-item">
-                <a class="nav-link text-warning {% if request.resolver_match.url_name == 'staff_bookings' %}active{% endif %}"
-                   href="{% url 'staff_bookings' %}">
+                <a class="nav-link {% if request.resolver_match.url_name == 'staff_bookings' %}active{% endif %}"
+                   href="{% url 'staff_bookings' %}"
+                   style="color: var(--butcher-gold) !important;">
                   <i class="bi bi-grid-3x3-gap me-1"></i>Staff
                 </a>
               </li>
             {% endif %}
             <li class="nav-item ms-lg-2">
-              <a class="btn btn-warning btn-sm px-3 fw-semibold text-dark" href="{% url 'booking_create' %}">
-                <i class="bi bi-calendar-plus me-1"></i>Book a Table
+              <a class="btn btn-warning btn-sm px-4 fw-semibold" href="{% url 'booking_create' %}">
+                Book a Table
               </a>
             </li>
             <li class="nav-item ms-lg-1">
               <form method="post" action="{% url 'account_logout' %}" class="d-inline">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline-light btn-sm px-3">
-                  <i class="bi bi-box-arrow-right me-1"></i>Sign Out
+                  Sign Out
                 </button>
               </form>
             </li>
           {% else %}
             <li class="nav-item ms-lg-2">
-              <a class="btn btn-warning btn-sm px-3 fw-semibold text-dark" href="{% url 'booking_create' %}">
-                <i class="bi bi-calendar-plus me-1"></i>Book a Table
+              <a class="btn btn-warning btn-sm px-4 fw-semibold" href="{% url 'booking_create' %}">
+                Book a Table
               </a>
             </li>
             <li class="nav-item ms-lg-1">
               <a class="btn btn-outline-light btn-sm px-3" href="{% url 'account_login' %}">
-                <i class="bi bi-person me-1"></i>Sign In
+                Sign In
               </a>
             </li>
           {% endif %}
@@ -94,11 +95,11 @@
 
   <!-- Auth status indicator -->
   {% if user.is_authenticated %}
-    <div class="auth-bar bg-dark border-bottom border-secondary py-1">
+    <div class="auth-bar py-1">
       <div class="container d-flex justify-content-end">
         <small class="text-muted">
-          Signed in as <strong class="text-warning">{{ user.email }}</strong>
-          {% if user.is_staff %}<span class="badge bg-warning text-dark ms-2">Staff</span>{% endif %}
+          Signed in as <strong style="color: var(--butcher-gold);">{{ user.email }}</strong>
+          {% if user.is_staff %}<span class="badge ms-2" style="background:var(--butcher-gold);color:#000;">Staff</span>{% endif %}
         </small>
       </div>
     </div>
@@ -126,54 +127,77 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer bg-dark text-white pt-5 pb-3 mt-5">
+  <footer class="footer text-white pt-5 pb-3 mt-0">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <h5 class="text-warning fw-bold mb-3">
-            <i class="bi bi-scissors me-2"></i>The Butcher
-          </h5>
-          <p class="text-muted small">
-            Premium steakhouse in the heart of Dublin. Sourcing the finest cuts from Ireland's
-            best farms since 2012.
+      <div class="row g-5">
+
+        <!-- Brand -->
+        <div class="col-lg-4 col-md-12">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-scissors fs-5" style="color:var(--butcher-gold);"></i>
+            <span class="footer-brand">The Butcher</span>
+          </div>
+          <p style="color:rgba(255,255,255,0.45); font-size:0.85rem; line-height:1.9;">
+            A premium steakhouse in the heart of Dublin, sourcing the finest dry-aged cuts from trusted Irish farms since 2012.
           </p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" aria-label="Instagram" style="color:rgba(255,255,255,0.4);" class="text-decoration-none">
+              <i class="bi bi-instagram fs-5"></i>
+            </a>
+            <a href="#" aria-label="Facebook" style="color:rgba(255,255,255,0.4);" class="text-decoration-none">
+              <i class="bi bi-facebook fs-5"></i>
+            </a>
+          </div>
         </div>
-        <div class="col-md-4">
-          <h6 class="text-uppercase text-muted fw-semibold mb-3 tracking-wide">Opening Hours</h6>
-          <ul class="list-unstyled text-muted small">
-            <li class="d-flex justify-content-between py-1 border-bottom border-secondary">
-              <span>Wednesday – Friday</span><span>12pm – 10pm</span>
-            </li>
-            <li class="d-flex justify-content-between py-1 border-bottom border-secondary">
-              <span>Saturday – Sunday</span><span>12pm – 10pm</span>
-            </li>
-            <li class="d-flex justify-content-between py-1 border-bottom border-secondary">
-              <span>Monday</span><span>12pm – 10pm</span>
-            </li>
-            <li class="d-flex justify-content-between py-1 text-danger">
-              <span>Tuesday</span><span>Closed</span>
-            </li>
-          </ul>
+
+        <!-- Opening Hours -->
+        <div class="col-lg-4 col-md-6">
+          <p class="eyebrow mb-3">Opening Hours</p>
+          <div class="hours-row">
+            <span>Monday</span><span>Noon till Late</span>
+          </div>
+          <div class="hours-row closed">
+            <span>Tuesday</span><span>Closed</span>
+          </div>
+          <div class="hours-row">
+            <span>Wednesday &ndash; Thursday</span><span>Noon till Late</span>
+          </div>
+          <div class="hours-row">
+            <span>Friday</span><span>Noon till Late</span>
+          </div>
+          <div class="hours-row">
+            <span>Saturday</span><span>Noon till Late</span>
+          </div>
+          <div class="hours-row" style="border-bottom:none;">
+            <span>Sunday</span><span>Noon till Late</span>
+          </div>
         </div>
-        <div class="col-md-4">
-          <h6 class="text-uppercase text-muted fw-semibold mb-3">Find Us</h6>
-          <address class="text-muted small not-italic">
-            <i class="bi bi-geo-alt me-2 text-warning"></i>14 Grafton Street<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Dublin 2, D02 XY45<br><br>
-            <i class="bi bi-telephone me-2 text-warning"></i>
-            <a href="tel:+35316785432" class="text-muted text-decoration-none">+353 1 678 5432</a><br>
-            <i class="bi bi-envelope me-2 text-warning"></i>
-            <a href="mailto:info@thebutcherdublin.ie" class="text-muted text-decoration-none">info@thebutcherdublin.ie</a>
+
+        <!-- Find Us -->
+        <div class="col-lg-4 col-md-6">
+          <p class="eyebrow mb-3">Find Us</p>
+          <address class="not-italic" style="font-size:0.85rem; line-height:2; color:rgba(255,255,255,0.55);">
+            <div class="d-flex gap-2 mb-1">
+              <i class="bi bi-geo-alt-fill flex-shrink-0 mt-1" style="color:var(--butcher-gold);"></i>
+              <span>14 Grafton Street<br>Dublin 2, D02 XY45</span>
+            </div>
+            <div class="d-flex gap-2 mb-1">
+              <i class="bi bi-telephone-fill flex-shrink-0 mt-1" style="color:var(--butcher-gold);"></i>
+              <a href="tel:+35316785432" style="color:rgba(255,255,255,0.55);" class="text-decoration-none">+353 1 678 5432</a>
+            </div>
+            <div class="d-flex gap-2">
+              <i class="bi bi-envelope-fill flex-shrink-0 mt-1" style="color:var(--butcher-gold);"></i>
+              <a href="mailto:info@thebutcherdublin.ie" style="color:rgba(255,255,255,0.55);" class="text-decoration-none">info@thebutcherdublin.ie</a>
+            </div>
           </address>
         </div>
+
       </div>
-      <hr class="border-secondary mt-4" />
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="text-muted small mb-0">
-            &copy; {% now "Y" %} The Butcher Dublin. All rights reserved.
-          </p>
-        </div>
+
+      <div class="mt-5 pt-3" style="border-top:1px solid rgba(255,255,255,0.07);">
+        <p class="text-center mb-0" style="font-size:0.75rem; color:rgba(255,255,255,0.3);">
+          &copy; {% now "Y" %} The Butcher Dublin. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
