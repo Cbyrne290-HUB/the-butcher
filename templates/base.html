@@ -23,9 +23,10 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{% url 'home' %}">
-        <i class="bi bi-scissors" style="color: var(--butcher-gold);"></i>
-        <span class="brand-name">The Butcher</span>
+      <a class="navbar-brand brand-lockup text-decoration-none" href="{% url 'home' %}">
+        <div class="brand-top">The Butcher</div>
+        <div class="brand-middle">&#9135; 🐄 &#9135;</div>
+        <div class="brand-bottom">Steakhouse &amp; Bar</div>
       </a>
 
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
@@ -64,28 +65,28 @@
               </li>
             {% endif %}
             <li class="nav-item ms-lg-2">
-              <a class="btn btn-warning btn-sm px-4 fw-semibold" href="{% url 'booking_create' %}">
-                Book a Table
-              </a>
-            </li>
-            <li class="nav-item ms-lg-1">
-              <form method="post" action="{% url 'account_logout' %}" class="d-inline">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-outline-light btn-sm px-3">
-                  Sign Out
-                </button>
-              </form>
+              <div class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0">
+                <a class="btn btn-warning btn-sm px-4 fw-semibold" href="{% url 'booking_create' %}">
+                  Book a Table
+                </a>
+                <form method="post" action="{% url 'account_logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-outline-light btn-sm px-3 w-100">
+                    Sign Out
+                  </button>
+                </form>
+              </div>
             </li>
           {% else %}
             <li class="nav-item ms-lg-2">
-              <a class="btn btn-warning btn-sm px-4 fw-semibold" href="{% url 'booking_create' %}">
-                Book a Table
-              </a>
-            </li>
-            <li class="nav-item ms-lg-1">
-              <a class="btn btn-outline-light btn-sm px-3" href="{% url 'account_login' %}">
-                Sign In
-              </a>
+              <div class="d-flex flex-column flex-lg-row gap-2 mt-2 mt-lg-0">
+                <a class="btn btn-warning btn-sm px-4 fw-semibold" href="{% url 'booking_create' %}">
+                  Book a Table
+                </a>
+                <a class="btn btn-outline-light btn-sm px-3" href="{% url 'account_login' %}">
+                  Sign In
+                </a>
+              </div>
             </li>
           {% endif %}
         </ul>

@@ -73,6 +73,38 @@ h1, h2, h3, h4, h5,
   color: var(--butcher-gold) !important;
 }
 
+/* --- Brand lockup ----------------------------------- */
+.brand-lockup {
+  text-align: center;
+  line-height: 1;
+  text-decoration: none !important;
+}
+
+.brand-top {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.brand-middle {
+  font-size: 0.75rem;
+  color: var(--butcher-gold);
+  letter-spacing: 0.1em;
+  margin: 1px 0;
+}
+
+.brand-bottom {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--butcher-gold);
+}
+
 /* --- Auth bar --------------------------------------- */
 .auth-bar {
   font-size: 0.78rem;
