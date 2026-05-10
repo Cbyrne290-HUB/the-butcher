@@ -1,6 +1,8 @@
 # The Butcher – Restaurant Table Booking System
 
-![The Butcher banner](docs/images/banner.png)
+<img width="249" height="95" alt="Screenshot 2026-05-10 at 14 07 06" src="https://github.com/user-attachments/assets/f3287f7b-635c-4920-9e5c-61c591360056" />
+
+<img width="4000" height="3200" alt="apple-responsive-devices-mockup" src="https://github.com/user-attachments/assets/04c5f18e-3fed-409f-989a-ab37c5c30194" />
 
 **Live Site:** [https://the-butcher-dublin-XXXXXXX.herokuapp.com](https://the-butcher-dublin.herokuapp.com)  
 **GitHub Repository:** [https://github.com/Cbyrne290-HUB/the-butcher](https://github.com/Cbyrne290-HUB/the-butcher)
@@ -129,6 +131,8 @@ User stories were tracked on the [GitHub Projects Kanban board](https://github.c
 | Bootstrap Light | `#f8f9fa` | Card and section backgrounds |
 | Bootstrap Muted | `#6c757d` | Body text, labels |
 
+<img width="851" height="424" alt="Screenshot 2026-05-10 at 14 20 55" src="https://github.com/user-attachments/assets/436a35f3-7e6b-4186-9ab6-8a0cb72e6084" />
+
 ### Typography
 
 - **Playfair Display** (Google Fonts) — headings. Chosen for its high-contrast serifs that read as premium and upscale.  
@@ -213,55 +217,55 @@ The project uses two custom models. Below is an entity-relationship overview.
 
 A sticky dark navbar provides access to all key pages. Unauthenticated users see Sign In and Register. Authenticated users see My Bookings, Reviews and Sign Out. Staff members see an additional Staff Bookings link. A small status bar beneath the navbar shows the logged-in email and a gold Staff badge where applicable.
 
-![Navigation](docs/images/navbar.png)
+<img width="846" height="289" alt="Screenshot 2026-05-10 at 16 12 46" src="https://github.com/user-attachments/assets/3f4fe903-98d5-4c0a-a7f9-de09cefd4d43" />
 
 ### Home Page
 
 The landing page introduces the restaurant with a full-height hero section, a stats strip, an about section, a how-to-book walkthrough and a snapshot of the most recent approved reviews.
 
-![Home page](docs/images/home.png)
+<img width="1728" height="993" alt="Screenshot 2026-05-10 at 14 25 07" src="https://github.com/user-attachments/assets/a98efd40-92a4-47d8-b251-7e7510626b72" />
 
 ### Book a Table
 
 A clean form lets logged-in users pick a date (date-picker with today as the minimum), a time slot (select dropdown), party size (1–12) and optional special requests. The form rejects past dates and Tuesdays with friendly error messages.
 
-![Booking form](docs/images/booking_form.png)
+<img width="1728" height="993" alt="Screenshot 2026-05-10 at 14 28 44" src="https://github.com/user-attachments/assets/2cee2cc8-9996-4806-9247-55480a35e3f7" />
 
 ### My Bookings
 
 Bookings are split into two sections: Upcoming (with Edit and Cancel actions) and Past & Cancelled (read-only). Each card shows date, time, party size, status badge and any special requests.
 
-![My bookings](docs/images/my_bookings.png)
+<img width="1728" height="787" alt="Screenshot 2026-05-10 at 14 26 49" src="https://github.com/user-attachments/assets/f0af8575-b791-4e06-a053-4d7a4b631568" />
 
 ### Edit Booking
 
 Pre-filled form lets the user change any field on an upcoming booking. Ownership is enforced server-side — visiting another user's edit URL returns a 403.
 
-![Edit booking](docs/images/booking_edit.png)
+<img width="1728" height="992" alt="Screenshot 2026-05-10 at 14 28 03" src="https://github.com/user-attachments/assets/53462401-f3e2-4741-a38c-1d69dfe7ddfb" />
 
 ### Cancel Booking
 
 A confirmation page explains that cancellation is permanent, then sets the booking status to cancelled on confirmation.
 
-![Cancel booking](docs/images/booking_cancel.png)
+<img width="1728" height="538" alt="Screenshot 2026-05-10 at 14 27 08" src="https://github.com/user-attachments/assets/8f1d5e07-45d1-40b8-8678-8b9d54411827" />
 
 ### Menu
 
 A structured menu page presents starters, mains, sides and desserts in a clean card layout. Prices and descriptions for each dish.
 
-![Menu page](docs/images/menu.png)
+<img width="1728" height="992" alt="Screenshot 2026-05-10 at 14 29 27" src="https://github.com/user-attachments/assets/6c1c52b0-7da6-41dc-a1dc-59370bb91a93" />
 
 ### Reviews
 
 All approved reviews are displayed in a responsive card grid with star ratings, reviewer name and date. Authenticated users who haven't reviewed yet see a Write a Review button. Users with a pending review see an awaiting approval notice with edit/delete links.
 
-![Reviews page](docs/images/reviews.png)
+<img width="1728" height="767" alt="Screenshot 2026-05-10 at 14 31 49" src="https://github.com/user-attachments/assets/99f689c4-779f-45ce-bce6-8a11d57424f6" />
 
 ### Write / Edit a Review
 
 A simple form for rating (1–5), title and comment. Each user can only submit one review — the button is hidden once they have one.
 
-![Review form](docs/images/review_form.png)
+<img width="1728" height="969" alt="Screenshot 2026-05-10 at 14 31 21" src="https://github.com/user-attachments/assets/eb777811-7b99-4e0c-bec7-974627e09246" />
 
 ### Staff Bookings
 
@@ -540,6 +544,7 @@ There are no known unfixed bugs at the time of submission.
 
 - Hero image: [Unsplash](https://unsplash.com/photos/grilled-steak) — free to use under the Unsplash licence.
 - About section image: [Unsplash](https://unsplash.com) — free to use under the Unsplash licence.
+- Colour palette image: [Coolors](https://coolors.co/?home)  
 
 ### Code
 
