@@ -337,20 +337,9 @@ Should Have stories represent 35% of total story points, which is within the 60%
 | Language | Use |
 |---|---|
 | Python 3.11 | Back-end logic, Django views, models, forms |
-
-<img width="262" height="221" alt="Screenshot 2026-02-04 at 01 50 50" src="https://github.com/user-attachments/assets/337203ae-7f84-4ceb-841a-fc62693bf116" />
-
 | HTML5 | Templates | 
-
-<img width="442" height="520" alt="Screenshot 2026-02-04 at 01 51 36" src="https://github.com/user-attachments/assets/6405ab7b-38d8-4e83-9886-eb71a234b181" />
-
 | CSS3 | Custom styles |
-
-<img width="398" height="488" alt="Screenshot 2026-02-04 at 01 51 55" src="https://github.com/user-attachments/assets/9203746b-9c2b-4794-a6bb-093cdbc9785a" />
-
 | JavaScript (ES6) | Auto-dismiss alerts, date input min, confirm dialogs |
-
-<img width="330" height="375" alt="Screenshot 2026-02-04 at 01 52 13" src="https://github.com/user-attachments/assets/e2e85e94-28e2-4d51-9711-289cacd8f85a" />
 
 ### Frameworks & Libraries
 
