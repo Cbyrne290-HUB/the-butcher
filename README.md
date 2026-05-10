@@ -145,11 +145,15 @@ Wireframes were produced in Balsamiq before development began.
 
 | Page | Wireframe |
 |---|---|
-| Home | ![Home wireframe](docs/wireframes/home.png) |
-| Book a Table | ![Booking form wireframe](docs/wireframes/booking_form.png) |
-| My Bookings | ![My bookings wireframe](docs/wireframes/my_bookings.png) |
-| Reviews | ![Reviews wireframe](docs/wireframes/reviews.png) |
-| Staff Bookings | ![Staff wireframe](docs/wireframes/staff_bookings.png) |
+| Home |<img width="436" height="486" alt="Screenshot 2026-05-10 at 19 30 55" src="https://github.com/user-attachments/assets/473b4a9d-5501-44a0-9675-f301802f59b4" />|
+
+| Book a Table |<img width="767" height="566" alt="Screenshot 2026-05-10 at 19 29 41" src="https://github.com/user-attachments/assets/edce8747-d592-4ada-be6f-a32ee982226f" />|
+
+| My Bookings |<img width="734" height="379" alt="Screenshot 2026-05-10 at 19 31 39" src="https://github.com/user-attachments/assets/1e054920-66d0-488b-99e0-90d4ab0b6f37" />|
+
+| Reviews |<img width="706" height="374" alt="Screenshot 2026-05-10 at 19 32 22" src="https://github.com/user-attachments/assets/ef06218d-655c-440a-89a5-623e8d0047af" />|
+
+| Staff Bookings |<img width="715" height="368" alt="Screenshot 2026-05-10 at 19 33 07" src="https://github.com/user-attachments/assets/8d613be9-b23d-4ccf-ad2c-e25037dbdc42" />|
 
 ---
 
@@ -268,17 +272,11 @@ A simple form for rating (1–5), title and comment. Each user can only submit o
 
 <img width="1728" height="969" alt="Screenshot 2026-05-10 at 14 31 21" src="https://github.com/user-attachments/assets/eb777811-7b99-4e0c-bec7-974627e09246" />
 
-### Staff Bookings
-
-A staff-only page lists all bookings from today onwards, grouped by status. Each row has an inline form to update the status (confirm or cancel) with a single click.
-
-![Staff bookings](docs/images/staff_bookings.png)
-
 ### Error Pages
 
 Custom 403, 404 and 500 pages match the site design and link back to the home page.
 
-![404 page](docs/images/404.png)
+<img width="843" height="404" alt="Screenshot 2026-05-10 at 16 34 28" src="https://github.com/user-attachments/assets/ced89805-1257-4ed1-b8ea-a3cbb512743c" />
 
 ### Flash Messages
 
@@ -318,9 +316,20 @@ All Must Have and Should Have stories were completed. Both Could Have stories we
 | Language | Use |
 |---|---|
 | Python 3.11 | Back-end logic, Django views, models, forms |
-| HTML5 | Templates |
+
+<img width="262" height="221" alt="Screenshot 2026-02-04 at 01 50 50" src="https://github.com/user-attachments/assets/337203ae-7f84-4ceb-841a-fc62693bf116" />
+
+| HTML5 | Templates | 
+
+<img width="442" height="520" alt="Screenshot 2026-02-04 at 01 51 36" src="https://github.com/user-attachments/assets/6405ab7b-38d8-4e83-9886-eb71a234b181" />
+
 | CSS3 | Custom styles |
+
+<img width="398" height="488" alt="Screenshot 2026-02-04 at 01 51 55" src="https://github.com/user-attachments/assets/9203746b-9c2b-4794-a6bb-093cdbc9785a" />
+
 | JavaScript (ES6) | Auto-dismiss alerts, date input min, confirm dialogs |
+
+<img width="330" height="375" alt="Screenshot 2026-02-04 at 01 52 13" src="https://github.com/user-attachments/assets/e2e85e94-28e2-4d51-9711-289cacd8f85a" />
 
 ### Frameworks & Libraries
 
