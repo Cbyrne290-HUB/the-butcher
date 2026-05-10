@@ -441,7 +441,13 @@ OK
 | W3C CSS Validator | `static/css/style.css` | No errors |
 | JSHint | `static/js/main.js` | No errors, ES6 configured |
 | CI Python Linter | All `.py` files | PEP8 compliant |
-| Lighthouse (mobile) | Home page | Performance 92, Accessibility 100, Best Practices 100, SEO 100 |
+| Lighthouse (mobile) | Home page | Performance 97, Accessibility 93, Best Practices 100, SEO 100 |
+
+<img width="853" height="876" alt="Screenshot 2026-05-10 at 19 45 13" src="https://github.com/user-attachments/assets/387e790d-0371-45b3-ad69-158642b8f522" />
+
+<img width="1685" height="709" alt="Screenshot 2026-02-04 at 02 52 32" src="https://github.com/user-attachments/assets/34314eab-38e8-4603-8e9b-f161a9526f71" />
+
+<img width="1638" height="94" alt="Screenshot 2026-05-10 at 19 53 25" src="https://github.com/user-attachments/assets/76b95a5f-e628-467c-b0db-1bac432021c6" />
 
 ### Browser Compatibility
 
