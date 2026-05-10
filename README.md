@@ -307,6 +307,27 @@ All Must Have and Should Have stories were completed. Both Could Have stories we
 | 3 | Reviews CRUD + moderation | US-10 to US-14, US-17, US-18 |
 | 4 | UI polish, menu, error pages, testing | US-19, US-20, US-21 |
 
+### Story Points
+
+| Story | Points |
+|---|---|
+| US-1,2,3 | 2 each |
+| US-4,5 | 3 each |
+| US-6,7,8,9 | 2 each |
+| US-10,11,12,13,14 | 2 each |
+| US-15,16 | 3 each |
+| US-17,18 | 2 each |
+| US-19,20,21 | 1 each |
+
+| Priority | Stories | Points | % of Total |
+|---|---|---|---|
+| Must Have | US-01–09, US-15, US-16 | 26 | 51% |
+| Should Have | US-10–14, US-17, US-18, US-21 | 15 | 35% |
+| Could Have | US-19, US-20 | 2 | 4% |
+| **Total** | | **43** | |
+
+Should Have stories represent 35% of total story points, which is within the 60% maximum required.
+
 ---
 
 ## Technologies Used
