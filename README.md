@@ -146,13 +146,9 @@ Wireframes were produced in Balsamiq before development began.
 | Page | Wireframe |
 |---|---|
 | Home |<img width="436" height="486" alt="Screenshot 2026-05-10 at 19 30 55" src="https://github.com/user-attachments/assets/473b4a9d-5501-44a0-9675-f301802f59b4" />|
-
 | Book a Table |<img width="767" height="566" alt="Screenshot 2026-05-10 at 19 29 41" src="https://github.com/user-attachments/assets/edce8747-d592-4ada-be6f-a32ee982226f" />|
-
 | My Bookings |<img width="734" height="379" alt="Screenshot 2026-05-10 at 19 31 39" src="https://github.com/user-attachments/assets/1e054920-66d0-488b-99e0-90d4ab0b6f37" />|
-
 | Reviews |<img width="706" height="374" alt="Screenshot 2026-05-10 at 19 32 22" src="https://github.com/user-attachments/assets/ef06218d-655c-440a-89a5-623e8d0047af" />|
-
 | Staff Bookings |<img width="715" height="368" alt="Screenshot 2026-05-10 at 19 33 07" src="https://github.com/user-attachments/assets/8d613be9-b23d-4ccf-ad2c-e25037dbdc42" />|
 
 ---
