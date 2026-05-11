@@ -565,6 +565,7 @@ There are no known unfixed bugs at the time of submission.
 
 - Restaurant name, concept and all written copy are fictional and created by me for this project.
 - Menu items and descriptions are fictional.
+- AI assistance (Claude by Anthropic) — used for README drafting, UI redesign and wireframe generation
 
 ### Media
 
